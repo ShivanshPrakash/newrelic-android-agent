@@ -16,7 +16,6 @@ import com.newrelic.agent.android.api.common.TransactionData;
 import com.newrelic.agent.android.distributedtracing.DistributedTracing;
 import com.newrelic.agent.android.distributedtracing.TraceContext;
 import com.newrelic.agent.android.distributedtracing.TraceListener;
-import com.newrelic.agent.android.harvest.DeviceInformation;
 import com.newrelic.agent.android.hybrid.StackTrace;
 import com.newrelic.agent.android.hybrid.data.DataController;
 import com.newrelic.agent.android.logging.AgentLog;
@@ -280,7 +279,7 @@ public final class NewRelic {
             return;
         }
         try {
-            AgentLogManager.setAgentLog(loggingEnabled ? new AndroidAgentLog() : new NullAgentLog());
+            AgentLogManager.setAgentLog(loggingEnabled ? new AndroidAgentLog(context) : new NullAgentLog());
             log.setLevel(logLevel);
 
             boolean instantApp = InstantApps.isInstantApp(context);
