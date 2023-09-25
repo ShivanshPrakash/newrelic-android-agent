@@ -31,7 +31,7 @@ dependencies {
     implementation "org.ow2.asm:asm-commons:${versions.java.asm}"
 
     // brittle: tread lightly
-    // mappedClasses fileTree(dir: rootProject.project(':agent').projectLibsDir, include: "android-agent-${version}.jar")
+    mappedClasses fileTree(dir: rootProject.project(':agent').projectLibsDir, include: "android-agent-${version}.jar")
 
     testImplementation "junit:junit:" + project.versions.test.junit
     testImplementation "org.mockito:mockito-core:" + project.versions.test.mockitoCore

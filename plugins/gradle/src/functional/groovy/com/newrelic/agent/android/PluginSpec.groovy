@@ -102,6 +102,7 @@ abstract class PluginSpec extends Specification {
         errorOutput = new StringWriter()
 
         def runner = GradleRunner.create()
+                 .withDebug(true)
                 .withProjectDir(projectRootDir)
                 .withGradleVersion(gradleVersion)
 
